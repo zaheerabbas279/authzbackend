@@ -18,8 +18,8 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
-app.get("/", verifyAccessToken, async (req, res, next) => {
-  res.send("Hello from the server 3100!!");
+app.get("/ping", async (req, res, next) => {
+  res.send("Pong");
 });
 
 app.use("/auth", AuthRoutes);
