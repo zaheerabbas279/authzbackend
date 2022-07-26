@@ -18,7 +18,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
-app.get("/ping", (req, res, next) => {
+app.get("/", (req, res, next) => {
   res.send("Pong");
 });
 
@@ -33,8 +33,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 3100;
+// const PORT = process.env.PORT || 3100;
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3100, () => {
   console.log(`Server running on the port ${PORT}`);
 });
