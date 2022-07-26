@@ -25,13 +25,13 @@ app.get("/", (req, res, next) => {
 app.use("/auth", AuthRoutes);
 app.use("/user", verifyAccessToken, UserRoutes);
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.send({
-    error: err.status || 500,
-    message: err.message,
-  });
-});
+// app.use((err, req, res, next) => {
+//   res.status(err.status || 500);
+//   res.send({
+//     error: err.status || 500,
+//     message: err.message,
+//   });
+// });
 
 // const PORT = process.env.PORT || 3100;
 
